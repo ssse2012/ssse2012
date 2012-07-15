@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sample6 - Collapsible</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="themes/my-custom-theme.css" />
+<link rel="stylesheet"
+	href="http://code.jquery.com/mobile/1.1.0/jquery.mobile.structure-1.1.0.min.css" />
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script
+	src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+</head>
+
+<body>
+	<div data-role="page" data-theme="a">
+
+		<div data-role="header">
+			<h1>Sample6 - Collapsible</h1>
+		</div>
+
+		<div data-role="content">
+
+		Example 1
+		
+			<div data-role="collapsible" data-mini="true">
+				<h3>Section 1</h3>
+				<p>Hello</p>
+			</div>
+		
+		Example 2
+		
+			<div data-role="collapsible-set">
+				<div data-role="collapsible" data-collapsed="false">
+					<h3>Section 1</h3>
+					<p>I'm the collapsible set content for section B.</p>
+				</div>
+
+				<div data-role="collapsible">
+					<h3>Section 2</h3>
+					<p>I'm the collapsible set content for section B.</p>
+				</div>
+			</div>
+		
+		Example 3
+		
+			<div data-role="collapsible-set">
+				<div data-role="collapsible" data-collapsed="false">
+					<h3>Section 1</h3>
+					<div>
+					<div data-role="collapsible">
+					<h3>Section 1.1</h3>
+					<p>I'm the collapsible set content for section B.</p>
+				    </div>
+					<div data-role="collapsible">
+					<h3>Section 1.2</h3>
+					<p>I'm the collapsible set content for section B.</p>
+				    </div>
+					</div>
+				</div>
+
+				
+			</div>	
+			
+		</div>
+	</div>
+</body>
+</html>

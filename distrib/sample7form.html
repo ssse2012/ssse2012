@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sample 7 - Form</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="themes/my-custom-theme.css" />
+<link rel="stylesheet"
+	href="http://code.jquery.com/mobile/1.1.0/jquery.mobile.structure-1.1.0.min.css" />
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script
+	src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+<script>
+	function submitForm() {
+		var name = document.forms["formname"]["inputname"].value;
+		if (name == null || name == "") {
+			alert("Enter name!");
+			return false;
+		} else {
+			alert("Hello " + name);
+			return true;
+		}
+	}
+</script>
+</head>
+
+<body>
+	<div data-role="page">
+
+		<div data-role="header">
+			<h1>Sample 7 - Form</h1>
+		</div>
+
+		<div data-role="content">
+
+			<form action="http://localhost:1234/xampp/result.php" method="post"
+				data-transition="pop" data-direction="reverse"
+				onsubmit="return submitForm()" name="formname" id="formnameid">
+				<fieldset>
+					<div data-role="fieldcontain">
+						<div>
+							<label for="inputname">Name:</label> <input type="text"
+								name="name" id="nameid" required />
+						</div>
+
+						<div>
+							<label for="inputage">Age:</label> <input type="number"
+								name="agename" id="ageid" placeholder="21" />
+						</div>
+
+						<div>
+							<label for="comments">Comments:</label>
+							<textarea name="comments" id="commentsid"></textarea>
+						</div>
+
+						<div>
+							<label for="birth">Date of birth:</label> <input type="date"
+								id="birthid" name="birthname">
+						</div>
+
+						<div>
+							<label for="updated">Receive updates</label> <select id="updated"
+								name="updated" data-role="slider">
+								<option value="no">No</option>
+								<option value="yes">Yes</option>
+							</select>
+						</div>
+
+						<div>
+							<label for="training">Training</label> <select id="trainingid"
+								name="training">
+								<option value="1">HTML</option>
+								<option value="2">Android</option>
+								<option value="2">iOS</option>
+							</select>
+						</div>
+
+
+						<fieldset data-role="controlgroup">
+							<legend>Choose a pet:</legend>
+							<input type="radio" name="radio-choice" id="radio-choice-1"
+								value="choice-1" checked="checked" /> <label
+								for="radio-choice-1">Cat</label> <input type="radio"
+								name="radio-choice" id="radio-choice-2" value="choice-2" /> <label
+								for="radio-choice-2">Dog</label> <input type="radio"
+								name="radio-choice" id="radio-choice-3" value="choice-3" /> <label
+								for="radio-choice-3">Hamster</label> <input type="radio"
+								name="radio-choice" id="radio-choice-4" value="choice-4" /> <label
+								for="radio-choice-4">Lizard</label>
+						</fieldset>
+
+						<div>
+							<label for="pic">Upload your pic</label> <input type="file"
+								name="pic" id="picid" />
+						</div>
+
+						<div>Terms and conditions</div>
+						<div>
+							<label><input type="checkbox" name="checkbox-0" /> I
+								agree </label>
+						</div>
+
+
+						<input type="submit" name="mysubmit" value="Click me!" />
+
+					</div>
+				</fieldset>
+			</form>
+
+		</div>
+	</div>
+
+</body>
+</html>

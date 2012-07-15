@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sample3 - 2 pages</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="themes/my-custom-theme.css" />
+<link rel="stylesheet"
+	href="http://code.jquery.com/mobile/1.1.0/jquery.mobile.structure-1.1.0.min.css" />
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script
+	src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+</head>
+
+<body>
+<!-- Start of first page -->
+	<div data-role="page" id="page1" data-theme="a">
+		<div data-role="header">
+			<h1>Sample3 - 2 pages</h1>
+		</div>
+
+		<div data-role="content">
+			<p>This is the first page</p>
+			<p>
+				View internal page called <a href="#page2" data-transition="flip">page
+					2</a>
+			</p>
+		</div>
+
+		<div data-role="footer">
+			<h4>Page 1 Footer</h4>
+		</div>
+	</div>
+
+	<!-- Start of second page -->
+	<div data-role="page" id="page2" data-theme="b">
+		<div data-role="header">
+			<h1>Page 2</h1>
+		</div>
+
+		<div data-role="content">
+			<p>I'm the second page</p>
+			<p>
+				<a href="#page1">Back to Page 1</a>
+			</p>
+		</div>
+
+		<div data-role="footer">
+			<h4>Page 2 Footer</h4>
+		</div>
+	</div>
+
+</body>
+</html>
