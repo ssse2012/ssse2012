@@ -13,16 +13,16 @@
 
 <div data-role="page">
 
-    <div data-role="header">
+    <div data-role="header" data-theme="a">
         <h1>The title</h1>
     </div><!-- /header -->
 
-    <div data-role="content">
+    <div data-role="content" data-theme="a">
         <p>The content</p>
 		<div id="map_canvas" style="width:100%;height:250px"></div>
     </div><!-- /content -->
 
-    <div data-role="footer">
+    <div data-role="footer" data-theme="a">
         <h4>The Footer</h4>
     </div><!-- /header -->
 </div><!-- /page -->
@@ -32,11 +32,44 @@
 <script>
 $(document).ready(function() {
 	
-	$(function() {
+	/*$(function() {
 		var yourStartLatLng = new google.maps.LatLng(59.3426606750, 18.0736160278);
 		$('#map_canvas').gmap({'center': yourStartLatLng});
+	});*/
+	
+	$.ajax({
+		async: true,
+		//url : 'http://foodrecon.keithmac.com/foodrecon/events/jsonapi.json',
+		url : 'http://api.nytimes.com/svc/events/v2/listings.json?ll=40.664167,-73.938611&api-key=3493984b763b38283a1bf81b7acc0923:8:66341856&radius=1000000',
+		success: function(data){
+			console.log(data);
+			for (i=0;i<data.results.length;i++){
+				var bounds = false;
+				if (i==data.results.length-1){
+					bounds = true;
+				}
+				var latlon = data.results[i].geocode_latitude + ',' + data.results[i].geocode_longitude
+				console.log(latlon);
+				var content;
+				content = "<h3>" + data.results[i].event_name + "</h3>";
+				content += '<p>' + data.results[i].web_description + '</p>';
+				console.log(content);
+				$('#map_canvas').gmap().bind('init', function(ev, map) {
+					$('#map_canvas').gmap('addMarker', {'position': latlon, 'bounds': bounds}).click(function() {
+						$('#map_canvas').gmap('openInfoWindow', {'content': content}, this);
+					});
+				});
+			}
+	  		
+		}
 	});
-});
+	
+
+		
+	
+		
+		
+	});
 
 </script>
 
